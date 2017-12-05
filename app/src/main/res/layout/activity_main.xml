@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.siakunin.retrofitobservable.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/joke_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="@string/joke"
+                android:onClick="onClick"/>
+            <Button
+                android:id="@+id/story_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/story" />
+            <Button
+                android:id="@+id/verse_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/verse" />
+            <Button
+                android:id="@+id/aphorism_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/aphorism" />
+            <Button
+                android:id="@+id/citation_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/citation" />
+            <Button
+                android:id="@+id/toast_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/toast" />
+            <Button
+                android:id="@+id/status_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/status" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/joke18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/joke18" />
+            <Button
+                android:id="@+id/story18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/story18" />
+            <Button
+                android:id="@+id/verse18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/verse18" />
+            <Button
+                android:id="@+id/aphorism18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/aphorism18" />
+            <Button
+                android:id="@+id/citation18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/citation18" />
+            <Button
+                android:id="@+id/toast18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/toast18" />
+            <Button
+                android:id="@+id/status18_button"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_button"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="@string/status18" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

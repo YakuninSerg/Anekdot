@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Анекдоты из России</string>
+
+    <string name="title_activity_anekdots">AnekdotsActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="joke">Анекдоты</string>
+    <string name="story">Рассказы</string>
+    <string name="verse">Стишки</string>
+    <string name="aphorism">Афоризмы</string>
+    <string name="citation">Цитаты</string>
+    <string name="toast">Тосты</string>
+    <string name="status">Статусы</string>
+    <string name="joke18">Анекдоты (+18)</string>
+    <string name="story18">Рассказы (+18)</string>
+    <string name="verse18">Стишки (+18)</string>
+    <string name="aphorism18">Афоризмы (+18)</string>
+    <string name="citation18">Цитаты (+18)</string>
+    <string name="toast18">Тосты (+18)</string>
+    <string name="status18">Статусы (+18)</string>
+
+</resources>
+
+
+
+
