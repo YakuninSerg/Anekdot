@@ -35,7 +35,8 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:text="@string/joke"
-                android:onClick="onClick"/>
+                android:onClick="onClick"
+                />
             <Button
                 android:id="@+id/story_button"
                 android:layout_width="match_parent"

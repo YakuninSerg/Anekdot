@@ -19,7 +19,7 @@ MainPresenter mainPresenter;
 
 
     public void onClick(View view) {
-        int type = 0;
+        int type;
         switch (view.getId()){
             case R.id.joke_button: type = Anekdot.JOKE; break;
             case R.id.story_button: type = Anekdot.STORY; break;

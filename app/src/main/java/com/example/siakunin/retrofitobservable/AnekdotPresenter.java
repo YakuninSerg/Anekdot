@@ -16,6 +16,9 @@ import io.reactivex.disposables.Disposable;
  */
 @InjectViewState
 public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
+    int count = 0;
+    boolean wasErrorShow = false;
+    boolean isLoading = false;
     private int type = 0;
     public int getType() {
         return type;
@@ -30,30 +33,37 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
 
     public void loadAnekdots(){
         apiAnekdot.getContent(type)
-                .retry(5L)
-                .repeat(10)
+                .retry(2)
+                .repeat(10L)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Anekdot>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
+                        isLoading = true;
                     }
 
                     @Override
                     public void onNext(Anekdot s) {
-                        Log.d("Anekdot",s.getContent());
+                        Log.d("Anekdot",Integer.toString(++count));
                         getViewState().addNewAnekdot(s.getContent());
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        //getViewState().showMessage("Не удалось загрузить данные");
-                        Log.e("Anekdot",e.getMessage());
+
+                        if(!wasErrorShow){
+                        getViewState().showMessage("Не удалось загрузить данные");
+                        Log.e("Anekdot",e.getClass().toString());
+                        wasErrorShow = true;
+                        isLoading = false;
+                        }
                     }
 
                     @Override
                     public void onComplete() {
-
+                        wasErrorShow = false;
+                        Log.d("Anekdot","onComplete");
+                        isLoading = false;
                     }
                 });
 

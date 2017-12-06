@@ -39,11 +39,23 @@ public class AnekdotActivity extends MvpAppCompatActivity implements AnekdotView
                 ((SimpleItemAnimator) recyclerView.getItemAnimator()).setSupportsChangeAnimations(false);
 
                 recyclerView.setAdapter(adapter);
-                recyclerView.setOnFlingListener(new RecyclerView.OnFlingListener() {
+                recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                         @Override
-                        public boolean onFling(int velocityX, int velocityY) {
-                                presenter.loadAnekdots();
-                                return false;
+                        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                                super.onScrollStateChanged(recyclerView, newState);
+                        }
+
+                        @Override
+                        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                                super.onScrolled(recyclerView, dx, dy);
+                                int visibleItemCount = layoutManager.getChildCount();//смотрим сколько элементов на экране
+                                int totalItemCount = layoutManager.getItemCount();//сколько всего элементов
+                                int firstVisibleItems = layoutManager.findFirstVisibleItemPosition();//какая позиция первого элемента
+
+                                if (!presenter.isLoading &&
+                                        (visibleItemCount + firstVisibleItems) >= totalItemCount) {
+                                        presenter.loadAnekdots();
+                                }
                         }
                 });
 
