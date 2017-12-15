@@ -3,6 +3,7 @@ package com.example.siakunin.retrofitobservable;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -15,6 +16,7 @@ MainPresenter mainPresenter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
 

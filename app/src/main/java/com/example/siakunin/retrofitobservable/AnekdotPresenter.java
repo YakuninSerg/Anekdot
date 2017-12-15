@@ -29,12 +29,12 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
     }
 
 
-    private ApiAnekdot apiAnekdot = Model.getApi();
+    private  ApiAnekdot apiAnekdot = Model.getApi();
 
     public void loadAnekdots(){
         apiAnekdot.getContent(type)
                 .retry(2)
-                .repeat(10L)
+                .repeat(20L)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Anekdot>() {
                     @Override
@@ -98,4 +98,6 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
 
 
     }
+
+
 }
