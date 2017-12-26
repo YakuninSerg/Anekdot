@@ -9,7 +9,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by siakunin on 04.12.2017.
+ * Created by siakunin on 04.12.2017.d
  */
 
 public class Model {
@@ -24,8 +24,7 @@ public class Model {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build();
-        ApiAnekdot apiAnekdot = retrofit.create(ApiAnekdot.class);
-        return apiAnekdot;
+        return retrofit.create(ApiAnekdot.class);
 
     }
 }

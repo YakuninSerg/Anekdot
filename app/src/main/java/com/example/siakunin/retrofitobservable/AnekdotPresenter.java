@@ -4,9 +4,6 @@ import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-
-import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -16,8 +13,8 @@ import io.reactivex.disposables.Disposable;
  */
 @InjectViewState
 public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
-    int count = 0;
-    boolean wasErrorShow = false;
+    private int count = 0;
+    private boolean wasErrorShow = false;
     boolean isLoading = false;
     private int type = 0;
     public int getType() {
@@ -31,7 +28,7 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
 
     private  ApiAnekdot apiAnekdot = Model.getApi();
 
-    public void loadAnekdots(){
+    void loadAnekdots(){
         apiAnekdot.getContent(type)
                 .retry(2)
                 .repeat(20L)
@@ -40,6 +37,7 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
                     @Override
                     public void onSubscribe(Disposable d) {
                         isLoading = true;
+                        wasErrorShow = false;
                     }
 
                     @Override
@@ -55,8 +53,8 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
                         getViewState().showMessage("Не удалось загрузить данные");
                         Log.e("Anekdot",e.getClass().toString());
                         wasErrorShow = true;
-                        isLoading = false;
                         }
+                        isLoading = false;
                     }
 
                     @Override
