@@ -7,3 +7,7 @@
 Требуется доступ в интернет.
 
 Хороший пример того, как различные библиотеки работают вместе.
+
+
+
+![](https://github.com/YakuninSerg/Anekdot/blob/master/anekdot.gif)
