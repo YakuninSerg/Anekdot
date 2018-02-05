@@ -6,6 +6,8 @@ import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.SkipStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
+import java.util.List;
+
 /**
  * Created by siakunin on 04.12.2017.
  */
@@ -17,6 +19,7 @@ public interface AnekdotView extends MvpView {
     void setTypeInPresenter();
     @StateStrategyType(SkipStrategy.class)
     void showMessage(String message);
+    void setAnekdots();
 
 
 }

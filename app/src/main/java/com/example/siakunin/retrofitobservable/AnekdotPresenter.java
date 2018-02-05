@@ -4,6 +4,10 @@ import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -17,6 +21,13 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
     private boolean wasErrorShow = false;
     boolean isLoading = false;
     private int type = 0;
+
+    List<String> anekdots = new ArrayList<>();
+
+    public void setAnekdots(List<String> anekdots) {
+        this.anekdots = anekdots;
+    }
+
     public int getType() {
         return type;
     }
@@ -32,6 +43,7 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
         apiAnekdot.getContent(type)
                 .retry(2)
                 .repeat(20L)
+                .filter(anekdot -> !anekdots.contains(anekdot.getContent()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Anekdot>() {
                     @Override
@@ -62,6 +74,7 @@ public class AnekdotPresenter extends MvpPresenter<AnekdotView> {
                         wasErrorShow = false;
                         Log.d("Anekdot","onComplete");
                         isLoading = false;
+                        getViewState().setAnekdots();
                     }
                 });
 

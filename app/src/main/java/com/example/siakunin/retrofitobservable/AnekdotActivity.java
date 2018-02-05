@@ -87,5 +87,10 @@ public class AnekdotActivity extends MvpAppCompatActivity implements AnekdotView
                 Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
         }
 
+        @Override
+        public void setAnekdots() {
+                presenter.setAnekdots(anekdots);
+        }
+
 
 }
